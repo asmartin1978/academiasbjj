@@ -1,0 +1,22 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Lista de academias</h1>
+      
+          <form class="new-academia">
+              <input type="text" name="nombre" placeholder="Nombre de la academia" />
+              <input type="text" name="anyo" placeholder="Año de creacion" />
+              <input type="text" name="direccion" placeholder="Direccion completa" />
+              <input type="submit" value="añadir">
+          </form>
+
+    </header>
+    
+    <ul>
+      {{#each academias}}
+        {{> academia}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
