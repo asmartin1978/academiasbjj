@@ -1,10 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
- import { Academias } from '../api/academias.js';
-
+import { Academias } from '../api/academias.js';
+import { ReactiveDict } from 'meteor/reactive-dict';
 import './academia.js';
 
 import './body.html';
+
+
+
+Template.body.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('academias');
+});
+
 
 Template.body.helpers({
   academias(){
@@ -25,15 +33,8 @@ Template.body.events({
     const anyo = target.anyo.value;
     const direccion = target.direccion.value;
  
-    // Insert a task into the collection
-    Academias.insert({
-      nombre,
-      anyo,
-      direccion,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+
+	Meteor.call('academias.insert', nombre, anyo, direccion);
  
     // Clear form
     target.nombre.value = '';
