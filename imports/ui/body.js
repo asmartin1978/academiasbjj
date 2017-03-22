@@ -1,6 +1,6 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
- 
-import { Academias } from '../api/academias.js';
+ import { Academias } from '../api/academias.js';
 
 import './academia.js';
 
@@ -31,6 +31,8 @@ Template.body.events({
       anyo,
       direccion,
       createdAt: new Date(), // current time
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
     });
  
     // Clear form
