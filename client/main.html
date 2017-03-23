@@ -2,3 +2,62 @@
   <title>academiasbjj</title>
 </head>
 
+<template name="home">
+    <p>home...</p>
+    
+</template>
+
+<template name="register">
+    <p>register</p>
+</template>
+
+<template name="buscador">
+    <p>buscador</p>
+    {{> listaacademias}}
+</template>
+
+
+<template name="account">
+    <p>account</p>
+</template>
+
+
+<template name="navegacion">
+
+      <nav role="navigation" class="navbar navbar-default">
+          <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                  <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a href="#" class="navbar-brand">Logo</a>
+              </div>
+              <!-- Collection of nav links and other content for toggling -->
+              <div id="navbarCollapse" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav">
+                      <li><a href="{{pathFor route='home'}}">Home</a></li>
+                      <li><a href="{{pathFor route='buscador'}}">Buscador de academias</a></li>
+                      {{#if currentUser}}<li><a href="{{pathFor route='account'}}">Mi cuenta</a></li>{{/if}}
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                      {{> loginButtons align="right"}}
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+</template>
+
+
+<template name="main">
+	{{> navegacion}}
+	{{> yield}}
+</template>
+
+
+
+

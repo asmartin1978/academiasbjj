@@ -6,13 +6,13 @@ import './academia.js';
 
 import './body.html';
 
-Template.body.onCreated(function bodyOnCreated() {
+Template.listaacademias.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe('academias');
 });
 
 
-Template.body.helpers({
+Template.listaacademias.helpers({
   academias(){
   	return Academias.find({} , { sort: { createdAt: -1 } });
   },
@@ -20,7 +20,7 @@ Template.body.helpers({
 });
 
 
-Template.body.events({
+Template.listaacademias.events({
   'submit .new-academia'(event) {
     // Prevent default browser form submit
     event.preventDefault();
