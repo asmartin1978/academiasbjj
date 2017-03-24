@@ -21,3 +21,9 @@ Router.route('/', {
     template: 'home'
 });
 
+
+Router.route('/detalleacademia/:_id', {
+    template: 'detalleacademia',
+    name: 'detalleacademia',
+});
+

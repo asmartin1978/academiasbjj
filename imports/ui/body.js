@@ -20,6 +20,7 @@ Template.listaacademias.helpers({
 });
 
 
+
 Template.listaacademias.events({
   'submit .new-academia'(event) {
     // Prevent default browser form submit
@@ -40,3 +41,7 @@ Template.listaacademias.events({
     target.direccion.value = '';
   },
 });
+
+
+
+

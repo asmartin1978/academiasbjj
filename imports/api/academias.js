@@ -17,8 +17,8 @@ if (Meteor.isServer) {
 Meteor.methods({
   'academias.insert'(nombre, anyo, direccion, ) {
     check(nombre, String);
- 	check(anyo, String);
- 	check(direccion, String);
+ 	  check(anyo, String);
+ 	  check(direccion, String);
 
     // tiene que estar logado ...
     if (! Meteor.userId()) {

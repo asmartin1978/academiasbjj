@@ -1,9 +1,26 @@
 <template name="academia">
-
 		<tr>
                 <td>{{nombre}}</td>
                 <td>{{anyo}}</td>
                 <td>{{direccion}}</td>
-                <button class="delete"> borrar</button>
+
+                <!--button class="delete"> borrar</button-->
+                <td><button type="button" class="btn btn-default delete">borrar</button> <a href="{{pathFor route='detalleacademia'}}">Detalle </a></td>  
          </tr>
 </template>
+
+
+
+<template name="detalleacademia">
+		Detalle academias
+
+		<tr>
+                <td>{{nombre}}</td>
+                <td>{{anyo}}</td>
+                <td>{{direccion}}</td>            
+         </tr>
+</template>
+
+
+
+
