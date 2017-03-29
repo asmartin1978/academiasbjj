@@ -11,6 +11,14 @@ if (Meteor.isServer) {
   Meteor.publish('academias', function academiasPublication() {
     return Academias.find();
   });
+
+
+  // publish dependent documents and simulate joins
+  Meteor.publish("detalleacademia", function (academiaId) {
+    check(academiaId, String);
+    return Academias.find({_id: academiaId}); 
+  });
+
 }
 
 
@@ -52,3 +60,6 @@ Meteor.methods({
   },
   
 });
+
+
+

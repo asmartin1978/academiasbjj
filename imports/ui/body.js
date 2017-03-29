@@ -16,10 +16,7 @@ Template.listaacademias.helpers({
   academias(){
   	return Academias.find({} , { sort: { createdAt: -1 } });
   },
-
 });
-
-
 
 Template.listaacademias.events({
   'submit .new-academia'(event) {
@@ -43,5 +40,16 @@ Template.listaacademias.events({
 });
 
 
+Template.detalleacademia.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe("detalleacademia", Router.current().params._id);
+});
+
+
+Template.detalleacademia.helpers({
+  academias(id){  
+    return Academias.findOne({_id : Router.current().params._id});
+  },
+});
 
 
