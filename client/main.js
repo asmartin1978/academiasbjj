@@ -12,6 +12,12 @@ Router.route('/register', {
 Router.route('/account', {
 	name: 'account',
 });
+
+Router.route('/myacademy', {
+	name: 'myacademy',
+});
+
+
 Router.route('/buscador', {
 	name: 'buscador',
 });

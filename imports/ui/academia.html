@@ -24,5 +24,40 @@
                        
 </template>
 
+<template name="myacademy">
+    <p>myacademy</p>
+    <div class="container">
+
+          {{#if currentUser}}
+                <form class="new-academia">
+                    <input type="text" name="nombre" placeholder="Nombre de la academia" />
+                    <input type="text" name="anyo" placeholder="Año de creacion de la academia" />
+                    <input type="text" name="direccion" placeholder="Direccion completa" />
+                    <input type="submit" value="añadir">
+                </form>
+          {{/if}}
+          
+
+            <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Año</th>
+                    <th>Direccion</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                 {{#each misacademias}}
+                    {{> academia}}
+                 {{/each}}           
+            </tbody>    
+            </table>
+    </div>
+
+    
+</template>
+
+
 
 

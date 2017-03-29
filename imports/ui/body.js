@@ -53,3 +53,18 @@ Template.detalleacademia.helpers({
 });
 
 
+
+Template.myacademy.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('misacademias');
+});
+
+Template.myacademy.helpers({
+  misacademias(){
+    return Academias.find({owner : Meteor.userId()});
+  },
+});
+
+
+
+

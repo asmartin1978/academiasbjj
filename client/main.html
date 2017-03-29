@@ -21,7 +21,6 @@
     <p>account</p>
 </template>
 
-
 <template name="navegacion">
 
       <nav role="navigation" class="navbar navbar-default">
@@ -42,7 +41,9 @@
                       <li><a href="{{pathFor route='home'}}">Home</a></li>
                       <li><a href="{{pathFor route='buscador'}}">Buscador de academias</a></li>
                       {{#if currentUser}}<li><a href="{{pathFor route='account'}}">Mi cuenta</a></li>{{/if}}
+                      {{#if currentUser}}<li><a href="{{pathFor route='myacademy'}}">Mis academias</a></li>{{/if}}
                   </ul>
+
                   <ul class="nav navbar-nav navbar-right">
                       {{> loginButtons align="right"}}
                   </ul>
