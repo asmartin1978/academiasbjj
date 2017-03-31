@@ -1,0 +1,55 @@
+<template name="addEditEventModal">
+  <div class="modal fade" id="add-edit-event-modal" tabindex="-1" role="dialog" aria-labelledby="add-edit-event-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="add-edit-event">{{modalLabel.label}} Event</h4>
+      </div>
+      <form id="add-edit-event-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4">
+                <label for="type">Tipo de clase</label>
+                <select name="type" class="form-control">
+                  <option selected="{{selected event.type 'Brazilian Jiu Jitsu' }}" value="Brazilian Jiu Jitsu">Brazilian Jiu Jitsu</option>
+                  <option selected="{{selected event.type 'Grappling' }}" value="Grappling">Grappling</option>
+                  <option selected="{{selected event.type 'MMA' }}" value="MMA">MMA</option>
+                  <option selected="{{selected event.type 'Boxeo' }}" value="Boxeo">Boxeo</option>
+                  <option selected="{{selected event.type 'Muay Thai' }}" value="Muay Thai">Muay Thai</option>
+                </select>
+              </div>
+              <div class="col-xs-12 col-sm-3">
+                <label for="start">Inicio del evento</label>
+                <input disabled type="text" name="start" class="form-control" value="{{event.start}}">
+              </div>
+              <div class="col-xs-12 col-sm-3">
+                <label for="end">Fin del evento</label>
+                <input disabled type="text" name="end" class="form-control" value="{{#if event.end}}{{event.end}}{{else}}{{event.start}}{{/if}}">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="title">Titulo del evento</label>
+            <input type="text" name="title" class="form-control" value="{{event.title}}">
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <label for="guests">Aforo maximo</label>
+              <input type="text" name="guests" class="form-control" value="{{event.guests}}">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          {{#if modalType 'edit'}}
+            <button class="btn btn-danger pull-left delete-event">Borrar evento</button>
+          {{/if}}
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success">{{modalLabel.button}} Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</template>
