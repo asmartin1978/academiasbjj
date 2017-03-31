@@ -13,6 +13,10 @@ Router.route('/account', {
 	name: 'account',
 });
 
+Router.route('/newacademy', {
+	name: 'newacademy',
+});
+
 Router.route('/myacademy', {
 	name: 'myacademy',
 });

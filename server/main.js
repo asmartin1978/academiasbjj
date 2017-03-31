@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import '../imports/api/academias.js'
+import '../imports/api/events.js';
 
 
 Meteor.startup(() => {

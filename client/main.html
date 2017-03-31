@@ -18,7 +18,12 @@
 
 
 <template name="account">
-    <p>account</p>
+    
+    <div class="container">
+      <p>Mi cuenta</p>
+      {{> addEditEventModal }}
+      <div id="events-calendar"></div>
+    </div>
 </template>
 
 <template name="navegacion">
